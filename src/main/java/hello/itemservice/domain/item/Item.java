@@ -2,12 +2,23 @@ package hello.itemservice.domain.item;
 
 import lombok.Data;
 
+import javax.validation.constraints.Max;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
+
 @Data
 public class Item {
 
     private Long id;
+
+    @NotBlank
     private String itemName;
+
+    @NotNull
     private Integer price;
+
+    @NotNull
+    @Max(9999)
     private Integer quantity;
 
     public Item() {
